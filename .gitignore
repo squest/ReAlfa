@@ -1,0 +1,7 @@
+app/.idea
+*.iml
+.DS_Store
+app/.DS_Store
+app/.lein-failures
+app/.lein-repl-history
+app/.gitignore
