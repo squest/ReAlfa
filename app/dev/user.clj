@@ -1,9 +1,7 @@
 (ns user
   (:require
-    [app.viewersys.system :as viewersys]
     [app.sitesys.system :as sitesys]
     [com.stuartsierra.component :as component]
-    [taoensso.carmine :as car :refer [wcar]]
     [clojure.set :as cset]
     [app.utils :refer :all]))
 
@@ -14,9 +12,7 @@
 (defn start
   "Starting the viewer"
   [which-system]
-  (->> (condp = which-system
-         :viewer (viewersys/create-system which-system)
-         :site (sitesys/create-system which-system))
+  (->> (sitesys/create-system which-system)
        (component/start-system)
        (reset! dev-system)))
 
